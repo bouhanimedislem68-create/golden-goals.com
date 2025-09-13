@@ -1,0 +1,137 @@
+body { 
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0.96; /* Adjust for visibility */
+}
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+p {
+  text-shadow: 2px 2Px 3px rgba(218, 90, 90, 0.658);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  color: #dc3545;
+  font-weight: bold;
+}
+#playerDisplay {
+  margin: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+#playerList{
+  color: whitesmoke;
+}
+#multipliers button[data-multiplier="2"]{
+  background-color: lightseagreen;
+  color: yellow;
+  font-size: x-large;
+  border: none;
+  border-radius: 5px;
+}
+#multipliers button[data-multiplier="1"]{
+  background-color: lightskyblue;
+  color: yellow;
+  font-size: x-large;
+  border: none;
+  border-radius: 5px;
+}
+#multipliers button[data-multiplier="5"],#multipliers button[data-multiplier="10"],#multipliers button[data-multiplier="15"]{
+  background-color:#dc3545;
+  color: yellow;
+  font-size: x-large;
+  border: none;
+  border-radius: 5px;
+}
+#multipliers button[data-multiplier="20"],#multipliers button[data-multiplier="30"]{
+  background-color: blueviolet;
+  color: yellow;
+  font-size: x-large;
+  border: none;
+  border-radius: 5px;
+}
+#multipliers button[data-multiplier="50"]{
+  background-color:goldenrod;
+  color: white;
+  font-size: x-large;
+  border: none;
+  border-radius: 5px;
+}
+h5{
+  margin-top: 160px;
+  text-align: center;
+  color: lawngreen;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h5:hover{
+  filter: brightness(200%);
+  text-decoration: underline;
+}
+#playerList {
+  list-style: none;
+  padding: 0;
+}
+h2{
+  color: gray;
+  text-decoration: underline;
+  font-family:'Times New Roman', Times, serif;
+}
+h3 {
+  text-shadow: 1px 1px 2px lightgreen;
+  text-decoration: solid;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 42px;
+  color: #28a745;
+  margin-top: 20px;
+}
+h1{
+  color: gold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 60px;
+  text-shadow: 5px 5px 3px rgba(255, 160, 122, 0.652);
+  animation-name: light;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;  
+}
+#playerDisplay{
+  color:aqua;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight:700;
+  font-size: xx-large;
+}
+@keyframes light{
+  0%{filter: contrast(100%);}
+  50%{filter: contrast(150%);}
+  100%{filter: contrast(100%);}
+}
+#skipBtn{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: aliceblue;
+  border-radius: 10px;
+  border: 3px solid white;
+  background-color: rgb(67, 108, 67)
+}
+#skipBtn:hover{
+  filter: brightness(130%);
+}
+#getPlayerBtn{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 10px;
+  border: 3px solid white;
+  background-color: lightgreen;
+}
+#getPlayerBtn:hover{
+  filter: brightness(130%);
+}

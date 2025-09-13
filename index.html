@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Football Multiplier Game</title>
+  <link rel="stylesheet" href="f/styles.css">
+</head>
+<body>
+  <video autoplay muted loop id="bgVideo">
+  <source src="f/bg1.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+  <h1>Golden Goals</h1>
+  <button id="getPlayerBtn">Random Player</button>
+<button id="skipBtn">⏭Skip</button>
+  <div id="playerDisplay"></div>
+
+  <div id="multipliers">
+    <button data-multiplier="1">×1</button>
+    <button data-multiplier="1">×1</button>
+    <button data-multiplier="2">×2</button>
+    <button data-multiplier="2">×2</button>
+    <button data-multiplier="5">×5</button>
+    <button data-multiplier="10">×10</button>
+    <button data-multiplier="15">×15</button>
+    <button data-multiplier="20">×20</button>
+    <button data-multiplier="30">x30</button>
+    <button data-multiplier="50">×50</button>
+  </div>
+
+  <h2>Your Picks:</h2>
+  <ul id="playerList"></ul>
+  <footer>
+    <h5>BouheniMohamedIslem©</h5>
+  </footer>
+  <script src="f/script.js"></script>
+</body>
+</html>
