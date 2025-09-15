@@ -1,4 +1,12 @@
-alert("Welcome to our website! this is a small tutorial to play :      Click on 'Random Player' and choose the multiplier .Don't forget that we gave you 3 skips and every duplicated player will give you a bonus try in order to achive 100k goals and get your own Golden Goal! Have Fun")
+/*replay button*/
+function tut(){
+  alert("Welcome to our website! this is a small tutorial to play :      Click on 'Random Player' and choose the multiplier .Don't forget that we gave you 3 skips and every duplicated player will give you a bonus try in order to achive 100k goals and get your own Golden Goal! Have Fun")
+}
+const res = document.getElementById("res");
+res.addEventListener("click", () => {location.reload();});
+/*prog barr*/
+
+/*pp*/
 const players = {
   "Cristiano Ronaldo": 943, "Lionel Messi": 879, "Robert Lewandowski": 608, "Neymar Jr": 450,
   "Kylian Mbappé": 300, "Erling Haaland": 200, "Mohamed Salah": 350, "Kevin De Bruyne": 170,
@@ -16,7 +24,30 @@ const players = {
   "Filippo Inzaghi": 313, "Miroslav Klose": 300, "Henrik Larsson": 400, "Robin van Persie": 300,
   "Dimitar Berbatov": 280, "Edgar Davids": 100, "Xavi": 100, "Andrés Iniesta": 100,
   "Frank Lampard": 300, "Steven Gerrard": 200, "Paul Scholes": 150, "Dennis Bergkamp": 250,
-  "Ryan Giggs": 170, "Jari Litmanen": 200
+  "Ryan Giggs": 170, "Jari Litmanen": 200, "Riyad Mahrez": 180,
+  "João Félix": 90,
+  "Ousmane Dembélé": 75,
+  "Marcus Rashford": 120,
+  "Lautaro Martínez": 130,
+  "Victor Osimhen": 110,
+  "Federico Chiesa": 85,
+  "Dominik Szoboszlai": 60,
+  "Jamal Musiala": 70,
+  "Declan Rice": 40,
+  "Enzo Fernández": 35,
+  "Achraf Hakimi": 50,
+  "Trent Alexander-Arnold": 45,
+  "Bukayo Saka": 95,
+  "Rasmus Højlund": 55,
+  "Takefusa Kubo": 30,
+  "Kaoru Mitoma": 40,
+  "Youssoufa Moukoko": 25,
+  "Ansu Fati": 60,
+  "Rodrygo": 80,
+  "Eduardo Camavinga": 30,
+  "Raphaël Varane": 25,
+  "Sofyan Amrabat": 20,
+  "Wissam Ben Yedder": 160
 };
 
 let currentPlayer = "";
@@ -54,9 +85,32 @@ function getRandomPlayer() {
   if (playersDrawn >= maxPlayers) {
     alert("You've reached the 10-player limit!");
     getPlayerBtn.disabled = true;
-    getPlayerBtn.style.opacity = 70;
+    getPlayerBtn.style.opacity = 0.7;
     return;
   }
+
+  const names = Object.keys(players);
+  let randomName;
+  let attempts = 0;
+
+  do {
+    randomName = names[Math.floor(Math.random() * names.length)];
+    attempts++;
+    if (attempts > names.length) {
+      alert("No more unique players available!");
+      return;
+    }
+  } while (seenPlayers.has(randomName));
+
+  currentPlayer = randomName;
+  seenPlayers.add(currentPlayer);
+  playersDrawn++;
+
+  playerDisplay.textContent = `${currentPlayer}`; // 👈 No goal count shown
+  drawCounter.textContent = `Players drawn: ${playersDrawn}/${maxPlayers}`;
+  skipCounter.textContent = `Skips left: ${skipsLeft}`;
+}
+  
 
   const names = Object.keys(players);
   const randomName = names[Math.floor(Math.random() * names.length)];
@@ -69,10 +123,9 @@ function getRandomPlayer() {
 
   seenPlayers.add(currentPlayer);
   playersDrawn++;
-  playerDisplay.textContent = `${currentPlayer} (${players[currentPlayer]} goals)`;
+  playerDisplay.textContent = `${currentPlayer}`;
   drawCounter.textContent = `Players drawn: ${playersDrawn}/${maxPlayers}`;
   skipCounter.textContent = `Skips left: ${skipsLeft}`;
-}
 
 // Handle "Get Player"
 getPlayerBtn.addEventListener("click", getRandomPlayer);
