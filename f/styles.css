@@ -69,8 +69,18 @@ p {
   border: none;
   border-radius: 5px;
 }
-h5{
+h6{
+  cursor: pointer;
   margin-top: 160px;
+  text-align: center;
+  color: rgb(5, 255, 113);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h6:hover{
+  filter: brightness(200%);
+  text-decoration: underline;
+}
+h5{
   text-align: center;
   color: lawngreen;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -116,12 +126,26 @@ h1{
   50%{filter: contrast(150%);}
   100%{filter: contrast(100%);}
 }
+#res{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: black;
+  border-radius: 10px;
+  border: 3px solid white;
+  background-color:#dc3545;
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
 #skipBtn{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: aliceblue;
   border-radius: 10px;
   border: 3px solid white;
   background-color: rgb(67, 108, 67)
+}
+#res:hover{
+  filter: brightness(130%);
 }
 #skipBtn:hover{
   filter: brightness(130%);
